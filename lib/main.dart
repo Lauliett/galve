@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:galve/provider/providers.dart';
-import 'package:galve/screens/bando_detail_screen.dart';
 import 'package:galve/screens/eventos_screen.dart';
 import 'package:galve/screens/screens.dart';
-import 'package:galve/services/bandos_service.dart';
-import 'package:galve/services/firebase_login_service.dart';
+import 'package:galve/services/services.dart';
 import 'package:galve/shared_preferences/preferences.dart';
 import 'package:galve/themes/app_theme.dart';
 import 'package:provider/provider.dart';
 
 void main() async => {
+      //Necesitamos instanciar las preferencias de usuario!
       WidgetsFlutterBinding.ensureInitialized(),
       await Preferences.init(),
       runApp(const AppState()),
@@ -49,6 +48,7 @@ class MyApp extends StatelessWidget {
         'proximamente': (BuildContext context) => Proximamente(),
         'eventos': (BuildContext context) => EventosScreen(),
       },
+      scaffoldMessengerKey: NotificationsService.messengerKey,
     );
   }
 }

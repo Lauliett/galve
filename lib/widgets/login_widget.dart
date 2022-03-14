@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:galve/model/user_login.dart';
 import 'package:galve/provider/login_form_provider.dart';
 import 'package:galve/provider/user_provider.dart';
+import 'package:galve/services/services.dart';
 import 'package:provider/provider.dart';
 
-import 'package:galve/services/firebase_login_service.dart';
 import 'package:galve/widgets/widgets.dart';
 
 class LoginWidget extends StatelessWidget {
@@ -155,7 +155,8 @@ class BotonLogin extends StatelessWidget {
             loginForm.email, loginForm.password);
 
         if (mensajeDeError != null) {
-          print(mensajeDeError);
+          NotificationsService.showSnackbar("Datos de acceso incorrectos");
+          //print(mensajeDeError);
           return;
         }
         UserLogin usuarioLogeado = UserLogin(
