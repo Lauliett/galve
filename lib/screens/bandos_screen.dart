@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:galve/provider/providers.dart';
 import 'package:galve/services/bandos_service.dart';
+import 'package:galve/services/notifications_service.dart';
 import 'package:galve/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
@@ -9,6 +11,7 @@ class BandosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bandosService = Provider.of<BandosService>(context);
+    final userProvider = Provider.of<UserProvider>(context);
 
     final size = MediaQuery.of(context).size;
     return Scaffold(
@@ -58,6 +61,14 @@ class BandosScreen extends StatelessWidget {
                 image: AssetImage("assets/waveHomeLila.png"),
                 fit: BoxFit.cover)),
       ),
+
+      floatingActionButton: (userProvider.objetctUserLogin == null)
+          ? null
+          : FloatingActionButton(
+              onPressed: () {},
+              child: const Icon(Icons.add),
+            ),
+      // This trailing comma makes auto,
     );
   }
 }

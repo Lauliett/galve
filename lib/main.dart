@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:galve/provider/providers.dart';
 import 'package:galve/screens/eventos_screen.dart';
 import 'package:galve/screens/screens.dart';
-import 'package:galve/services/services.dart';
+import 'package:galve/services/servides.dart';
 import 'package:galve/shared_preferences/preferences.dart';
 import 'package:galve/themes/app_theme.dart';
 import 'package:provider/provider.dart';
