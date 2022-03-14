@@ -242,17 +242,10 @@ class ItemGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridTile(
-      child: InkResponse(
-        onTap: () => onTap(),
-        child: CardContainer(
-            child: Column(
-              children: [image, text],
-            ),
-            height: 0,
-            width: 0,
-            padding: 0),
-      ),
-    );
+    return CardConEfectoOnTap(
+        onTap: onTap,
+        children: Column(
+          children: [image, text],
+        ));
   }
 }
