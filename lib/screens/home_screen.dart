@@ -73,7 +73,7 @@ class TiempoContainer extends StatelessWidget {
         child: Column(
           children: [
             Container(
-                height: 75,
+                height: size.height * 0.1,
                 child: ElTiempo(),
                 decoration: BoxDecoration(
                   color: Color.fromRGBO(125, 103, 249, 1.0),
@@ -90,6 +90,7 @@ class ElTiempo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -121,11 +122,11 @@ class DashBoardSeccion extends StatelessWidget {
     return Container(
       color: Color.fromRGBO(105, 82, 237, 1.0),
       child: Container(
-        height: size.height * 0.66,
+        height: size.height * 0.64,
         child: Column(
           children: [
             SizedBox(
-              height: 30,
+              height: size.height * 0.05,
             ),
             Expanded(child: GirdHome())
           ],
